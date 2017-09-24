@@ -1,8 +1,28 @@
 const React = () => {
   const setElement = (element, children) => {
-    const elm = document.createElement(element);
-    elm.innerHTML = children.join(' ');
-    return elm;
+    if (isClass(element)) {
+      const component = new element();
+      return component.render();
+    } else if (typeof(element) === 'function') {
+     //this creates the option for stateless components (functions)
+      return element();
+    } else {
+      const elm = document.createElement(element);
+      children.forEach(child => {
+        if (typeof(child) === 'object') {
+          elm.appendChild(child);
+        } else {
+          elm.innerHTML += child;
+        }
+      });
+      return elm;
+    }
+  }
+
+  //check if the object fiven is a class
+  const isClass = (func) => {
+    return typeof func === 'function'
+      && /_class\S+/i.test(func.toString());
   }
 
   const createElement = (el, props, ...children) => {
