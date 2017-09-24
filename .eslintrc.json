@@ -1,0 +1,13 @@
+{
+	"extends": [
+		"airbnb"
+	],
+	"rules": {
+    "no-console": ["error", {"allow":["log"]}]
+  },
+  "parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 2016,
+		"sourceType": "module"
+	}
+}
