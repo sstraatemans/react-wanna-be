@@ -1,13 +1,14 @@
 {
-	"extends": [
-		"airbnb"
-	],
 	"rules": {
-    "no-console": ["error", {"allow":["log"]}]
+    "no-console": ["error", {"allow":["log"]}],
+		"no-param-reassign": ["error", { "props": false }]
   },
   "parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaVersion": 2016,
 		"sourceType": "module"
-	}
+	},
+	"env": {
+    "browser": true
+  }
 }
