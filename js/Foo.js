@@ -1,7 +1,11 @@
 import React from './react/react';
-class Foo {
+
+class Foo extends React.Component {
+  constructor (props){
+    super(props);
+  }
   render() {
-    return React.createElement('div', null, `Foo`);
+    return React.createElement('div', {onclick: this.props.onClick}, `Foo ${this.props.name}`);
   }
 }
 

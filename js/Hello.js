@@ -1,6 +1,6 @@
 import React from './react/react';
-const Hello = () => {
-  return React.createElement('div', null, `Helloooo world!`);
+const Hello = (props) => {
+  return React.createElement('div', null, `Helloooo ${props.name}!`);
 }
 
 export default Hello;
